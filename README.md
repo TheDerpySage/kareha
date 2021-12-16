@@ -21,3 +21,18 @@ Once you've made your container, and configured one of your host ports to port 8
 
 For more information, refer to original website.
 
+### Reverse Proxy Support
+
+If you're going to use a reverse proxy in front of this, such as NGINX, then Banning IPs will end up banning the NGINX server unless you make a few changes.
+
+Enable apache2's remoteip mod by uncommenting the line in the Dockerfile, uncomment the RemoteIP directives in the 000-default.conf, and change the 127.0.0.1 to the reverse proxy's IP.
+
+For NGINX, add these to the server block:
+
+```
+proxy_set_header    X-Real-IP        $remote_addr;
+proxy_set_header    X-Forwarded-For  $proxy_add_x_forwarded_for;
+```
+
+
+

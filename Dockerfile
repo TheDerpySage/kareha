@@ -16,6 +16,8 @@ COPY app/ /var/www/html/
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 # Enable perl
 RUN a2enmod cgid
+# Uncomment this for reverse proxy support
+#RUN a2enmod remoteip
 # Resolve some minor issues 
 RUN mkdir /var/www/html/res /var/www/html/src /var/www/html/thumb
 RUN sed -e '/Alias/s/^/#/g' -i /etc/apache2/mods-enabled/alias.conf
