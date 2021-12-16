@@ -4,9 +4,7 @@ https://wakaba.c3.cx/s/web/wakaba_kareha
 
 modified version by https://github.com/lilyanatia
 
-```
-this is a modified version of kareha. some bugs that can cause xhtml errors have been fixed, and a few minor features have been added.
-```
+`this is a modified version of kareha. some bugs that can cause xhtml errors have been fixed, and a few minor features have been added.`
 
 My additions are to use the example .htaccess for the application root, a default Apache2 config, and a Dockerfile for easy deployment.
 
