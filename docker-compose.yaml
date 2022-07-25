@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  server:
+    image: "kareha:latest"
+    network_mode: bridge
+    ports:
+      - 80:80
+    volumes:
+      - html:/var/www/html
+      - logs:/var/log/apache2
+volumes:
+  html:
+  logs:
